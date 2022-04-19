@@ -16,9 +16,9 @@ class Client(discord.Client):
         print("logged in")
 
     async def on_message(self, message):
-        if "__PING_BOT_INIT" != message.content:
-            return
         if self.started:
+            return
+        if "__PING_BOT_INIT" != message.content:
             return
         print(message.content)
         print("sending")
